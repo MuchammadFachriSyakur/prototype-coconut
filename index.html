@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title-web">Coconut & Coffee Export</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo" id="company-name">Coconut & Coffee</a>
+        <span class="menu-toggle" id="menu-toggle">☰</span>
+        <ul id="nav-links">
+          <li><a href="#home" id="nav-home">Home</a></li>
+          <li><a href="#about" id="nav-about">About</a></li>
+          <li><a href="#product" id="nav-products">Products</a></li>
+          <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
+          <li><a href="#contact" id="nav-contact">Contact</a></li>
+          <li>
+            <select name="lang-switch" id="lang-switch">
+              <option value="id">ID</option>
+              <option value="en">EN</option>
+              <option value="jp">日本語</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1 id="hero-title">Premium Coconut & Coffee Export</h1>
+          <p id="hero-tagline">From Indonesia to the World</p>
+          <a href="#product" class="cta-btn" id="cta-btn">Explore Products</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 class="section-title" id="about-title">About Us</h2>
+        <p id="company-description">
+          We are an Indonesian export company specializing in premium coconut
+          and coffee products. With strong partnerships with local farmers, we
+          deliver only the best quality to our international clients.
+        </p>
+      </section>
+
+      <section id="product">
+        <h2 class="section-title" id="products-title">Our Products</h2>
+        <div class="product-grid" id="product-grid">
+          <!-- <a href="product-detail.html" class="product">
+            <img src="Assets/image/cocopeat.webp" alt="Coconut Oil" />
+            <h3>Cocopeat</h3>
+            <p>
+              High-quality virgin coconut oil with international standard
+              packaging.
+            </p>
+            <button>Request Quote</button>
+          </a> -->
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2 class="section-title" id="gallery-title">Gallery</h2>
+        <div class="gallery">
+          <a href="#img1"
+            ><img src="assets/image/gallery1.webp" alt="Coconut"
+          /></a>
+          <a href="#img2"
+            ><img src="assets/image/gallery2.webp" alt="Coffee"
+          /></a>
+
+          <a href="#vid1">
+            <video
+              src="assets/image/video1.mp4"
+              muted
+              playsinline
+              width="200"
+            ></video>
+          </a>
+        </div>
+
+        <div id="img1" class="modal">
+          <a href="#gallery"
+            ><img src="assets/image/gallery1.webp" alt="Coconut"
+          /></a>
+        </div>
+        <div id="img2" class="modal">
+          <a href="#gallery"
+            ><img src="assets/image/gallery2.webp" alt="Coffee"
+          /></a>
+        </div>
+
+        <div id="vid1" class="modal video-modal">
+          <div class="video-wrapper">
+            <video id="gallery-video" controls>
+              <source src="assets/image/video1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <a href="#gallery" class="close-btn">&times;</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title" id="contact-title">Get in Touch</h2>
+        <p class="contact-subtitle" id="contact-subtitle">
+          Have questions? Reach us directly or fill in the form — we’ll respond
+          soon.
+        </p>
+
+        <div class="contact-container">
+          <!-- Kiri: Contact Info -->
+          <div class="contact-info">
+            <h3 id="contact-info">Contact Information</h3>
+            <p id="contact-addres">📍 Jl. Merdeka No. 45, Pekalongan</p>
+            <p id="contact-email">📧 hello@coconutcoffee.com</p>
+            <p id="contact-phone">📱 +62 812-3456-7890</p>
+          </div>
+
+          <!-- Kanan: Form -->
+          <form
+            class="contact-form"
+            onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');"
+          >
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="example@email.com"
+              required
+            />
+
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3 id="footer-company-name">Coconut & Coffee Export</h3>
+          <p id="footer-by">
+            Powered by
+            <span class="software-house">Tera Software Developer</span>
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home" id="footer-home">Home</a>
+          <a href="#about" id="footer-about">About</a>
+          <a href="#product" id="footer-products">Products</a>
+          <a href="#gallery" id="footer-contact">Contact</a>
+          <a href="#gallery" id="footer-gallery">Gallery</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="#">🌐</a>
+          <a href="#">📧</a>
+          <a href="#">📱</a>
+        </div>
+      </div>
+
+      <p class="copyright" id="footer-cp">
+        &copy; Coconut & Coffee Export. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="assets/data/products.js"></script>
+    <script src="assets/data/company.js"></script>
+    <script src="assets/data/content.js"></script>
+    <script src="assets/script/index.js"></script>
+  </body>
+</html>
