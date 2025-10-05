@@ -15,6 +15,12 @@ document.addEventListener("click", function (e) {
 
 function setLanguage(lang) {
   document.getElementById("title-web").innerText = company.companyName[lang];
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute("content", content.seo.desc[lang]);
+  document
+    .querySelector('meta[property="og:description"]')
+    ?.setAttribute("content", content.seo.desc[lang]);
 
   document.getElementById("nav-home").innerText = content.navbar.home[lang];
   document.getElementById("nav-about").innerText = content.navbar.about[lang];
@@ -84,20 +90,25 @@ function setLanguage(lang) {
 
 function renderProducts(lang) {
   const grid = document.getElementById("product-grid");
-  grid.innerHTML = ""; // clear dulu biar gak dobel
+  grid.innerHTML = "";
 
   products.forEach((product) => {
     const card = document.createElement("div");
     card.className = "product";
 
+    let link = `details-product.html?id=${product.id}`;
+    if (product.id === "cocopeat") {
+      link = "/cocopeat/";
+    }
+
     card.innerHTML = `
-      <img src="assets/image/${product.image}" alt="${product.title[lang]}" />
-      <h3>${product.title[lang]}</h3>
-      <p>${product.shortDescription[lang]}</p>
-      <a href="details-product.html?id=${product.id}">
-        <button>${content.readMore[lang]}</button>
-      </a>
-    `;
+    <img src="assets/image/${product.image}" alt="${product.title[lang]}" />
+    <h3>${product.title[lang]}</h3>
+    <p>${product.shortDescription[lang]}</p>
+    <a href="${link}" class="read-more-btn">
+      ${content.readMore[lang]}
+    </a>
+  `;
 
     grid.appendChild(card);
   });
@@ -112,7 +123,7 @@ renderProducts(savedLang);
 
 document.getElementById("lang-switch").addEventListener("change", function () {
   const selectedLang = this.value;
-  localStorage.setItem("selectedLang", selectedLang); // <--- simpan ke localStorage
+  localStorage.setItem("selectedLang", selectedLang);
   setLanguage(selectedLang);
   renderProducts(selectedLang);
 });
