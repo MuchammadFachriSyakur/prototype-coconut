@@ -27,6 +27,6 @@ const company = {
     },
     email: "info@habibjamal.com",
     phone: "+62 877 8977 3177",
-    waPhone: "6281234567890",
+    waPhone: "6287757399177",
   },
 };
