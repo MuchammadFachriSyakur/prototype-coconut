@@ -97,8 +97,10 @@ function renderProducts(lang) {
     card.className = "product";
 
     let link = `details-product.html?id=${product.id}`;
+    const baseURL = location.origin + "/prototype-coconut/";
+
     if (product.id === "cocopeat") {
-      link = "cocopeat/index.html";
+      link = baseURL + "cocopeat/index.html";
     }
 
     card.innerHTML = `
@@ -127,5 +129,6 @@ document.getElementById("lang-switch").addEventListener("change", function () {
   setLanguage(selectedLang);
   renderProducts(selectedLang);
 });
+
 
 
