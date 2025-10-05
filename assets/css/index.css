@@ -113,7 +113,7 @@ nav ul li a:hover {
 
 /* === Hero Section === */
 .hero {
-  background: url("../image/hero.webp");
+  background: url("../image/hero1.webp");
   background-size: cover;
   position: relative;
   color: #fff;
@@ -218,7 +218,7 @@ nav ul li a:hover {
   flex-grow: 1;
 }
 
-.product button {
+.product .read-more-btn {
   margin: 15px;
   padding: 10px;
   background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
@@ -230,7 +230,7 @@ nav ul li a:hover {
   transition: opacity 0.3s;
 }
 
-.product button:hover {
+.product .read-more-btn:hover {
   opacity: 0.85;
 }
 
