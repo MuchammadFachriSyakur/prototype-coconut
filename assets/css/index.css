@@ -218,7 +218,7 @@ nav ul li a:hover {
   flex-grow: 1;
 }
 
-.product .read-more-btn {
+.product .read-more-btn, .product button{
   margin: 15px;
   padding: 10px;
   background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
@@ -230,7 +230,7 @@ nav ul li a:hover {
   transition: opacity 0.3s;
 }
 
-.product .read-more-btn:hover {
+.product .read-more-btn:hover, .product button:hover {
   opacity: 0.85;
 }
 
