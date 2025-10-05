@@ -4,6 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="page-title">Produk Detail</title>
+    <meta
+      name="description"
+      content="Coconut & Coffee Export - Premium Indonesian coconut and coffee products for global trade."
+    />
+    <meta
+      name="keywords"
+      content="Coconut export, Coffee export, Indonesia, Cocopeat, Coconut Oil, Coffee Beans"
+    />
+    <meta name="author" content="Coconut & Coffee Export" />
+
+    <meta property="og:title" content="Coconut & Coffee Export" />
+    <meta
+      property="og:description"
+      content="Premium Indonesian Coconut & Coffee products. From Indonesia to the world."
+    />
+    <meta property="og:image" content="assets/image/hero1.webp" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Coconut & Coffee Export" />
+    <meta
+      name="twitter:description"
+      content="Premium Indonesian Coconut & Coffee products."
+    />
+    <meta name="twitter:image" content="assets/image/hero1.webp" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -147,7 +173,7 @@
   <body>
     <!-- Navbar -->
     <nav>
-      <div class="logo">Coconut & Coffee</div>
+      <div class="logo" id="company-name">Coconut & Coffee</div>
     </nav>
 
     <!-- Hero -->
@@ -173,11 +199,12 @@
       <p>&copy; 2025 Coconut & Coffee Export. All Rights Reserved.</p>
     </footer>
 
+    <script src="assets/data/company.js"></script>
     <script src="assets/data/products.js"></script>
     <script src="assets/data/content.js"></script>
     <script>
       function getLang() {
-        return localStorage.getItem("selectedLang") || "id"; // default id
+        return localStorage.getItem("selectedLang") || "id";
       }
 
       function getProductIdFromURL() {
@@ -186,7 +213,7 @@
       }
 
       function loadProduct() {
-        const lang = getLang(); // ambil dari localStorage
+        const lang = getLang();
         const productId = getProductIdFromURL();
         const product = products.find((p) => p.id === productId);
 
@@ -196,8 +223,46 @@
           return;
         }
 
-        // Title + Hero
-        document.title = product.title[lang] + " - Coconut & Coffee Export";
+        const pageTitle =
+          product.title[lang] + " | " + company.companyName[lang];
+        const pageDesc = `${product.shortDescription[lang]}`;
+        const pageImage = `assets/image/${product.image}`;
+        const pageUrl = window.location.href;
+
+        document.getElementById("page-title").innerText = pageTitle;
+
+        // Update <meta name="description">
+        document
+          .querySelector('meta[name="description"]')
+          ?.setAttribute("content", pageDesc);
+
+        // Update Open Graph (OG)
+        document
+          .querySelector('meta[property="og:title"]')
+          ?.setAttribute("content", pageTitle);
+        document
+          .querySelector('meta[property="og:description"]')
+          ?.setAttribute("content", pageDesc);
+        document
+          .querySelector('meta[property="og:image"]')
+          ?.setAttribute("content", pageImage);
+        document
+          .querySelector('meta[property="og:url"]')
+          ?.setAttribute("content", pageUrl);
+
+        // Update Twitter Card
+        document
+          .querySelector('meta[name="twitter:title"]')
+          ?.setAttribute("content", pageTitle);
+        document
+          .querySelector('meta[name="twitter:description"]')
+          ?.setAttribute("content", pageDesc);
+        document
+          .querySelector('meta[name="twitter:image"]')
+          ?.setAttribute("content", pageImage);
+
+        document.getElementById("company-name").innerText =
+          company.companyName[lang];
         document.getElementById(
           "hero"
         ).style.backgroundImage = `url(assets/image/${product.image})`;
@@ -205,7 +270,6 @@
         document.getElementById("hero-subtitle").textContent =
           product.shortDescription[lang];
 
-        // Product detail
         document.getElementById(
           "product-image"
         ).src = `assets/image/${product.image}`;
@@ -215,13 +279,25 @@
         document.getElementById("product-desc").innerHTML =
           product.description[lang];
 
-        // Button ambil dari content.js
         document.getElementById("quote-btn").textContent =
-          content.requestQuote[lang];
+          content.chatToWhatsapp[lang];
 
-        // Footer juga
         document.querySelector("footer p").textContent =
           content.footer.allRight[lang];
+
+        const quoteBtn = document.getElementById("quote-btn");
+        quoteBtn.textContent = content.chatToWhatsapp[lang];
+        quoteBtn.addEventListener("click", () => {
+          const phoneNumber = company.contact.waPhone;
+          const message =
+            "💬 " +
+            content.messageInterestProduct[lang] +
+            product.title[lang] +
+            " 📦";
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+          window.open(whatsappURL, "_blank");
+        });
       }
 
       document.addEventListener("DOMContentLoaded", loadProduct);
