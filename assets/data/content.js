@@ -74,4 +74,29 @@ const content = {
       jp: "© 2025 すべての権利を保有",
     },
   },
+
+  chatToWhatsapp: {
+    id: "Chat ke Whatsapp",
+    en: "Chat To Whatsapp",
+    jp: "すべての権利を保有",
+  },
+
+  messageInterestProduct: {
+    id: "Halo, saya tertarik dengan produk: ",
+    en: "Hello, I'm interested in your product: ",
+    jp: "こんにちは、こちらの製品に興味があります: ",
+  },
+
+  seo: {
+    title: {
+      id: "Ekspor Cocopeat & Kopi Premium dari Indonesia",
+      en: "Premium Cocopeat & Coffee Export from Indonesia",
+      jp: "インドネシア発のプレミアムココピート＆コーヒー輸出",
+    },
+    desc: {
+      id: "Perusahaan ekspor cocopeat dan kopi terpercaya dari Indonesia untuk pasar global.",
+      en: "Trusted Indonesian exporter for cocopeat and coffee products to global markets.",
+      jp: "信頼できるインドネシアのココピート・コーヒー製品輸出会社。",
+    },
+  },
 };
