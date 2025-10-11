@@ -100,7 +100,6 @@ function renderProducts(lang) {
 
     if (product.id === "cocopeat") {
       link ="cocopeat/index.html";
-      console.log(link);
     }
 
     card.innerHTML = `
@@ -129,6 +128,7 @@ document.getElementById("lang-switch").addEventListener("change", function () {
   setLanguage(selectedLang);
   renderProducts(selectedLang);
 });
+
 
 
 
