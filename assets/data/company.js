@@ -22,7 +22,7 @@ const company = {
   contact: {
     addres: {
       id: "Jalan Sambirogo BLOK K-21, Surabaya, Jawa Timur, Indonesia",
-      en: "Jalan Sambirogo BLOCK K-21, Surabaya, East Java, Indonesia",
+      en: "Sambirogo Street, Block K-21, Surabaya, East Java, Indonesia",
       jp: "インドネシア、東ジャワ州スラバヤ、サンビロゴ通りK-21ブロック",
     },
     email: "info@habibjamal.com",
