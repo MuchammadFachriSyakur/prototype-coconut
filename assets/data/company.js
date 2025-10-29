@@ -1,6 +1,6 @@
 const company = {
   companyName: {
-    id: "PT RAVATAR GLOBAL ASIAA",
+    id: "PT RAVATAR GLOBAL ASIA",
     en: "PT RAVATAR GLOBAL ASIA",
     jp: "PT RAVATAR GLOBAL ASIA",
   },
